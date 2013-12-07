@@ -1,11 +1,23 @@
 !!!5
 %html
   %head
-    %title Ruby on Rails Tutorial Sample App |= yield(:title)
+    %title
+      =yield(:title)
     =stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
-
-
+    %header(class="navbar navbar-fixed-top navbar-inverse")
+      %div(class="navbar-inner")
+        %div(class="container")
+          =link_to "sample app", '#', id: "logo"
+          %nav
+            %ul(class="nav pull-right")
+              %li
+                = link_to "Home",    '#'
+              %li
+                = link_to "Help",    '#'
+              %li
+                = link_to "Sign in",    '#'
+    %div(class="container")
+      = yield
