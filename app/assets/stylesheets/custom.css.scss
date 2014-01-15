@@ -56,7 +56,7 @@ p {
 
 /* header */
 
-#logo {
+#logo {                 //选择 id="logo" 的所有元素。
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -68,7 +68,7 @@ p {
   line-height: 1;
 }
 
-#logo:hover {
+#logo:hover {   //选择鼠标指针位于其上
   color: #fff;
   text-decoration: none;
 }

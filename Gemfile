@@ -1,8 +1,9 @@
 source 'http://ruby.taobao.org'
+
 ruby '2.0.0'
 gem 'haml'
 gem 'bootstrap-sass', '2.3.2.0'
-gem 'bcrypt-ruby',  '3.1.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
@@ -36,7 +37,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
