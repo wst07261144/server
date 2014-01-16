@@ -40,8 +40,12 @@ class UsersController < ApplicationController
   end
 
   def signed_in_user
-    redirect_to signin_url ,notice:'Please login' if !signed_in?
+    #redirect_to signin_url ,notice:'Please login' if !signed_in?
     #flash[:error] 也可以使用上述的简便方式，但 flash[:success] 却不可以。
+   unless sign_in?
+     store_location
+     redirect_to signin_url ,notice:'Please login'
+   end
   end
 
   def correct_user
