@@ -16,7 +16,7 @@ module SessionsHelper
   end
 
   def signed_in?
-    !current_user.nil?
+    !current_user.nil?    #此处current_user是 def current_user方法
   end
 
   def sign_out
