@@ -35,4 +35,13 @@ module SessionsHelper
     redirect_to (session[:return_to]||default)
     session[:return_to] = nil
   end
+
+  def signed_in_user
+    #redirect_to signin_url ,notice:'Please login' if !signed_in?
+    #flash[:error] 也可以使用上述的简便方式，但 flash[:success] 却不可以。
+    unless signed_in?
+      store_location
+      redirect_to signin_url ,notice:'Please login'
+    end
+  end
 end

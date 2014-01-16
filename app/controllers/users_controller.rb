@@ -52,15 +52,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,:password_confirmation)
   end
 
-  def signed_in_user
-    #redirect_to signin_url ,notice:'Please login' if !signed_in?
-    #flash[:error] 也可以使用上述的简便方式，但 flash[:success] 却不可以。
-   unless signed_in?
-     store_location
-     redirect_to signin_url ,notice:'Please login'
-   end
-  end
-
   def correct_user
     @user = User.find(params[:id])
     redirect_to root_path unless current_user?(@user)

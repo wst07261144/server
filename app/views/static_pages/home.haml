@@ -1,11 +1,18 @@
-.center.hero-unit
-  -provide(:title, 'Home')
-  %h1 Welcome to the Sample App
-  %h2
-    %span This is the home page for the
-    %span
-      =link_to 'Ruby on Rails Tutorial',"http://baidu.com/"
-    %span sample application
-  =link_to 'sign up now!',signup_path,:class =>"btn btn-large btn-primary"
-=link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
-
+-if signed_in?
+  %div(class="row")
+    %aside(class="span4" )
+      %section
+        =render 'shared/user_info'
+      %section
+        =render 'shared/micropost_form'
+-else
+  .center.hero-unit
+    -provide(:title, 'Home')
+    %h1 Welcome to the Sample App
+    %h2
+      %span This is the home page for the
+      %span
+        =link_to 'Ruby on Rails Tutorial',"http://baidu.com/"
+      %span sample application
+    =link_to 'sign up now!',signup_path,:class =>"btn btn-large btn-primary"
+  =link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'
