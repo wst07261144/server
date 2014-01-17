@@ -1,0 +1,7 @@
+- @user ||= current_user
+%div(class="stats")
+  =link_to @user.followed_users.count,following_user_path(@user),:id=>"following",:class=>"stat"
+  =link_to 'following', following_user_path(@user)
+%div(class="stats")
+  =link_to @user.followers.count,following_user_path(@user),:id=>"followers",:class=>"stat"
+  =link_to 'followers', following_user_path(@user)
