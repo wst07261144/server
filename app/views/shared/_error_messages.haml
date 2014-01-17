@@ -1,10 +1,10 @@
-- if Object.errors.any?
+- if object.errors.any?
   %div( id="error_explanation")
     %div(class="alert alert-error" )
       %span The form contains
       %span
-        = pluralize(Object.errors.count, "error")
+        = pluralize(object.errors.count, "error")
     %ul
-      -Object.errors.full_messages.each do |msg|
+      -object.errors.full_messages.each do |msg|
         %li
           = msg

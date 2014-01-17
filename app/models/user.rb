@@ -15,12 +15,19 @@ class User < ActiveRecord::Base
   #validates是一个方法
 
 
-def User.new_remember_token
-  SecureRandom.urlsafe_base64
-end
-def User.encrypt(token)
-  Digest::SHA1.hexdigest(token.to_s)  #调用 to_s，是为了处理输入为 nil 的情况，在浏览器中不会遇到，测试时偶尔会出现。）
-end
+  def User.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+  def User.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)  #调用 to_s，是为了处理输入为 nil 的情况，在浏览器中不会遇到，测试时偶尔会出现。）
+  end
+
+  def feed
+    #Micropost.where('user_id=?',id)
+    microposts
+  end
+
+
 
 private
 
