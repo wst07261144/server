@@ -6,6 +6,7 @@
         = gravatar_for @user
         = @user.name
   %div(class="span8")
+    = render 'follow_form' if signed_in?
     -if @user.microposts.any?
       %h3 Microposts (#{ @user.microposts.count})
       %ol(class="microposts")
